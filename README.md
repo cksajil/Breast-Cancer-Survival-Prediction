@@ -1,4 +1,4 @@
-# Breast-Cancer-Survival-Prediction (Work in progress)
+# Breast-Cancer-Survival-Prediction (work in progress)
 Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
 ### Overview
@@ -8,7 +8,7 @@ Breast cancer is the second most common cancer after skin cancer in women. It af
 Machine learning helps us to learn complex patterns from intricate data that are difficult for human beings to recognize manually. One such use case is estimating the survival time and hence preventing unnecessary surgical treatments. Here in this project, the survival status is predicted using gene expression data and clinical data using classical machine learning algorithms.
 
 ### Dataset
-The dataset going to be used in the case study is published in Nature Communications (Pereira et al., 2016), also available in Kaggle named as Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) database. This is part of a Canada-UK Project which contains targeted sequencing data of 1,980 primary breast cancer samples. The associated clinical and genomic data was downloaded from cBioPortal. The dataset was originally collected by Professor Carlos Caldas from Cambridge Research Institute and Professor Sam Aparicio from the British Columbia Cancer Center in Canada.
+The dataset going to be used in the case study is published in Nature Communications (**[Pereira et al., 2016](https://www.nature.com/articles/ncomms11479)), also available in Kaggle named as Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) database. This is part of a Canada-UK Project which contains targeted sequencing data of 1,980 primary breast cancer samples. The associated clinical and genomic data was downloaded from **[cBioPortal](https://www.cbioportal.org/). The dataset was originally collected by Professor Carlos Caldas from Cambridge Research Institute and Professor Sam Aparicio from the British Columbia Cancer Center in Canada.
 
 ### Jupyter Notebooks
 The analysis is available in the following jupyter notebooks:
