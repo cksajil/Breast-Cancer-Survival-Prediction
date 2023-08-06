@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 from utils.general import load_config
 
 
@@ -33,6 +34,7 @@ def main():
             if clinical_response.status_code == 200:
                 metabric_clinical_data = clinical_response.json()
                 print(metabric_clinical_data)
+                # data.to_csv("metabric_clinical.csv")
             else:
                 print("Error retrieving METABRIC clinical data.")
         else:
