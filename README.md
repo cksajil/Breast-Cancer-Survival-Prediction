@@ -49,7 +49,14 @@ python -m pip install -r requirements.txt
 ### How to run
 
 ```console
-python run.py
+#Download Dataset
+python run.py -s d
+
+#Model Training
+python run.py -s m
+
+#Predict on Test Data
+python run.py -s t
 ```
 
 ### Testing
