@@ -1,6 +1,6 @@
 import requests
-import pandas as pd
-from utils.general import load_config
+from utils.general import load_config, json_to_df, create_folder
+from os import path
 
 
 def main():
@@ -8,6 +8,8 @@ def main():
 
     # Base URL of the CBioPortal API
     base_url = config["base_url"]
+    data_path = config["data_directory"]
+    clinical_data_file = config["clinical_data"]
 
     # Endpoint to get the list of studies
     studies_endpoint = "studies"
@@ -33,8 +35,9 @@ def main():
 
             if clinical_response.status_code == 200:
                 metabric_clinical_data = clinical_response.json()
-                print(metabric_clinical_data)
-                # data.to_csv("metabric_clinical.csv")
+                clinical_df = json_to_df(metabric_clinical_data)
+                create_folder(data_path)
+                clinical_df.to_csv(path.join(data_path, clinical_data_file))
             else:
                 print("Error retrieving METABRIC clinical data.")
         else:
