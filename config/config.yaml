@@ -1,0 +1,6 @@
+# INITIAL SETTINGS
+data_directory: ./data/
+data_url: 
+master_data: master_data.csv
+test_size: 0.25
+model_directory: ./models/
