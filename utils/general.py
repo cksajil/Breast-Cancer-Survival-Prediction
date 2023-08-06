@@ -1,4 +1,5 @@
 import yaml
+from os import path
 
 
 def load_config(config_name):

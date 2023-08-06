@@ -1,6 +1,7 @@
 # INITIAL SETTINGS
 data_directory: ./data/
 data_url: 
+base_url: https://www.cbioportal.org/api/
 master_data: master_data.csv
 test_size: 0.25
 model_directory: ./models/
