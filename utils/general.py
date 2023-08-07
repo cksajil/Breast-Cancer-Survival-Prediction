@@ -1,6 +1,9 @@
 import os
 import yaml
 import pandas as pd
+from os import path
+from joblib import dump
+from sklearn.model_selection import GridSearchCV
 
 
 def load_config(config_name):
@@ -22,3 +25,11 @@ def json_to_df(json_content):
 def create_folder(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
+
+
+def model_trainer(clf, params, X_train, y_train, label):
+    config = load_config("config.yaml")
+    clf = GridSearchCV(clf, params, cv=10, scoring="roc_auc", refit=True)
+    clf.fit(X_train, y_train)
+    print(clf.best_params_)
+    dump(clf, path.join(config["model_directory"], label + ".joblib"))

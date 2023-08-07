@@ -1,13 +1,11 @@
 import numpy as np
 import pandas as pd
 from os import path
-from joblib import dump
 from sklearn import preprocessing
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from utils.general import load_config, create_folder
+from utils.general import load_config, create_folder, model_trainer
 
 
 def main():
@@ -46,14 +44,11 @@ def main():
         X, y, test_size=0.30, random_state=42
     )
 
+    create_folder(config["model_directory"])
     print("Working on Logistic Regression Model")
     clf_LR = LogisticRegression()
-    lr_params = {"C": np.logspace(0.01, 2, 4), "penalty": ["l1", "l2"]}
-    clf_LR = GridSearchCV(clf_LR, lr_params, cv=10, scoring="roc_auc", refit=True)
-    clf_LR.fit(X_train, y_train)
-    print(clf_LR.best_params_)
-    create_folder(config["model_directory"])
-    dump(clf_LR, path.join(config["model_directory"], "logistic_regression.joblib"))
+    lr_params = {"C": np.logspace(0.01, 2, 3), "penalty": ["l1", "l2"]}
+    model_trainer(clf_LR, lr_params, X_train, y_train, "logistic_regression")
 
 
 if __name__ == "__main__":
