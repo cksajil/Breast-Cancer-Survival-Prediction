@@ -11,9 +11,8 @@ def main():
     config = load_config("config.yaml")
     location = config["data_directory"]
     mutation_file = config["mutation_data"]
-    data = pd.read_csv(path.join(location, mutation_file))
+    data = pd.read_csv(path.join(location, mutation_file), low_memory=False)
 
-    data = data.drop(["patient_id"], axis=1)
     data = data.drop(["death_from_cancer"], axis=1)
     data = data.dropna()
 
