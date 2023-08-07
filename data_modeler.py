@@ -3,6 +3,7 @@ import pandas as pd
 from os import path
 from sklearn import preprocessing
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from utils.general import load_config, create_folder, model_trainer
@@ -45,10 +46,16 @@ def main():
     )
 
     create_folder(config["model_directory"])
-    print("Working on Logistic Regression Model")
-    clf_LR = LogisticRegression()
-    lr_params = {"C": np.logspace(0.01, 2, 3), "penalty": ["l1", "l2"]}
-    model_trainer(clf_LR, lr_params, X_train, y_train, "logistic_regression")
+
+    # print("Training Logistic Regression Model")
+    # clf_LR = LogisticRegression()
+    # lr_params = {"C": np.logspace(0.01, 2, 3), "penalty": ["l1", "l2"]}
+    # model_trainer(clf_LR, lr_params, X_train, y_train, "logistic_regression")
+
+    print("Training Decision Tree Model")
+    clf_DT = DecisionTreeClassifier()
+    dt_params = {"ccp_alpha": [0.1, 0.01, 0.001], "max_depth": [5, 6, 7, 8, 9]}
+    model_trainer(clf_DT, dt_params, X_train, y_train, "decision_tree")
 
 
 if __name__ == "__main__":
