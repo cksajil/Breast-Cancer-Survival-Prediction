@@ -2,6 +2,7 @@ import os
 import yaml
 import pandas as pd
 from os import path
+from time import time
 from joblib import dump
 from sklearn.model_selection import GridSearchCV
 
@@ -27,6 +28,18 @@ def create_folder(directory):
         os.makedirs(directory)
 
 
+def timer_function(myfunc):
+    def wrapper_function(*args, **kwargs):
+        t1 = time()
+        result = myfunc(*args, **kwargs)
+        t2 = time()
+        print(f"{args[-1]} model trained in {(t2-t1):.4f}s")
+        return result
+
+    return wrapper_function
+
+
+@timer_function
 def model_trainer(clf, params, X_train, y_train, label):
     config = load_config("config.yaml")
     clf = GridSearchCV(clf, params, cv=5, scoring="roc_auc", refit=True)
