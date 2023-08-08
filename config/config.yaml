@@ -4,3 +4,4 @@ base_url: https://www.cbioportal.org/api/
 clinical_data: metabric_clinical.csv
 mutation_data: METABRIC_RNA_Mutation.csv
 model_directory: ./models/
+test_split: 0.25
