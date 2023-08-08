@@ -6,6 +6,7 @@ from sklearn import preprocessing
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from utils.general import load_config, create_folder, model_trainer
 
@@ -58,10 +59,15 @@ def main():
     # dt_params = {"ccp_alpha": [0.1, 0.01, 0.001], "max_depth": [5, 6, 7, 8, 9]}
     # model_trainer(clf_DT, dt_params, X_train, y_train, "decision_tree")
 
-    print("Training Support Vector Model")
-    clf_SVM = svm.SVC()
-    svm_params = {"C": [0.1, 1, 10], "gamma": [1, 0.1, 0.01]}
-    model_trainer(clf_SVM, svm_params, X_train, y_train, "support_vector_machine")
+    # print("Training Support Vector Model")
+    # clf_SVM = svm.SVC()
+    # svm_params = {"C": [0.1, 1, 10], "gamma": [1, 0.1, 0.01]}
+    # model_trainer(clf_SVM, svm_params, X_train, y_train, "support_vector_machine")
+
+    print("Working on Random Forest Model")
+    clf_RF = RandomForestClassifier()
+    rf_params = {"max_depth": list(range(10, 14)), "n_estimators": [50, 100, 120]}
+    model_trainer(clf_RF, rf_params, X_train, y_train, "random_forest")
 
 
 if __name__ == "__main__":
