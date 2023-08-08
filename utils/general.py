@@ -29,7 +29,7 @@ def create_folder(directory):
 
 def model_trainer(clf, params, X_train, y_train, label):
     config = load_config("config.yaml")
-    clf = GridSearchCV(clf, params, cv=10, scoring="roc_auc", refit=True)
+    clf = GridSearchCV(clf, params, cv=5, scoring="roc_auc", refit=True)
     clf.fit(X_train, y_train)
     print(clf.best_params_)
     dump(clf, path.join(config["model_directory"], label + ".joblib"))

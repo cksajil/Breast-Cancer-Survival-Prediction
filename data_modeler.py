@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from os import path
 from sklearn import svm
+from xgboost import XGBClassifier
 from sklearn import preprocessing
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
@@ -49,24 +50,19 @@ def main():
 
     create_folder(config["model_directory"])
 
-    # print("Training Logistic Regression Model")
-    # clf_LR = LogisticRegression()
-    # lr_params = {"C": np.logspace(0.01, 2, 3), "penalty": ["l1", "l2"]}
-    # model_trainer(clf_LR, lr_params, X_train, y_train, "logistic_regression")
+    print("Training Decision Tree Model")
+    clf_DT = DecisionTreeClassifier()
+    dt_params = {"ccp_alpha": [0.1, 0.01], "max_depth": [5, 7]}
+    model_trainer(clf_DT, dt_params, X_train, y_train, "decision_tree")
 
-    # print("Training Decision Tree Model")
-    # clf_DT = DecisionTreeClassifier()
-    # dt_params = {"ccp_alpha": [0.1, 0.01, 0.001], "max_depth": [5, 6, 7, 8, 9]}
-    # model_trainer(clf_DT, dt_params, X_train, y_train, "decision_tree")
-
-    # print("Training Support Vector Model")
-    # clf_SVM = svm.SVC()
-    # svm_params = {"C": [0.1, 1, 10], "gamma": [1, 0.1, 0.01]}
-    # model_trainer(clf_SVM, svm_params, X_train, y_train, "support_vector_machine")
+    print("Training Support Vector Model")
+    clf_SVM = svm.SVC()
+    svm_params = {"C": [0.1, 10], "gamma": [0.1, 0.01]}
+    model_trainer(clf_SVM, svm_params, X_train, y_train, "support_vector_machine")
 
     print("Working on Random Forest Model")
     clf_RF = RandomForestClassifier()
-    rf_params = {"max_depth": list(range(10, 14)), "n_estimators": [50, 100, 120]}
+    rf_params = {"max_depth": list(range(10, 12)), "n_estimators": [50, 100]}
     model_trainer(clf_RF, rf_params, X_train, y_train, "random_forest")
 
 
