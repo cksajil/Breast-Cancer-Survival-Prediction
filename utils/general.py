@@ -19,6 +19,9 @@ def load_config(config_name):
 
 
 def json_to_df(json_content):
+    """
+    Function to convert list of json content to dataframe
+    """
     df = pd.DataFrame.from_dict(json_content, orient="columns")
     return df
 
