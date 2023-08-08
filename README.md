@@ -32,7 +32,7 @@ python -m pip install --user virtualenv
 # Creating New Virtual Environment
 python -m venv envname
 
-# Activating Virtual Environment*
+# Activating Virtual Environment
 source envname/bin/activate
 
 # Upgrade PIP
