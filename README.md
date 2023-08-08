@@ -25,37 +25,33 @@ Python 3.9.12
 
 ### Setting up virtual environment
 
-*Installing Virtual Environment*
 ```console
+# Installing Virtual Environment
 python -m pip install --user virtualenv
-```
-*Creating New Virtual Environment*
-```console
+
+# Creating New Virtual Environment
 python -m venv envname
-```
-*Activating Virtual Environment*
-```console
+
+# Activating Virtual Environment*
 source envname/bin/activate
-```
-*Upgrade PIP*
-```console
+
+# Upgrade PIP
 python -m pip install --upgrade pip
-```
-*Installing Packages*
-```console
+
+# Installing Packages
 python -m pip install -r requirements.txt
 ```
 
 ### How to run
 
 ```console
-#Download Dataset
+# Download Dataset
 python run.py -s d
 
-#Model Training
+# Model Training
 python run.py -s m
 
-#Predict on Test Data
+# Predict on Test Data
 python run.py -s t
 ```
 
