@@ -39,17 +39,18 @@ def timer_function(myfunc):
     """
 
     def wrapper_function(*args, **kwargs):
+        model_name = args[-1]["name"]
         t1 = time()
         result = myfunc(*args, **kwargs)
         t2 = time()
-        print(f"{args[-1]} model trained in {(t2-t1):.4f}s")
+        print(f"{model_name} model trained in {(t2-t1):.4f}s")
         return result
 
     return wrapper_function
 
 
 @timer_function
-def model_trainer(clf, params, X_train, y_train, label):
+def model_trainer(clf, params, X_train, y_train, properties):
     """
     A function to train given model using training data
     and do the hyperparament optimization using gridsearch
@@ -57,5 +58,4 @@ def model_trainer(clf, params, X_train, y_train, label):
     config = load_config("config.yaml")
     clf = GridSearchCV(clf, params, cv=5, scoring="roc_auc", refit=True)
     clf.fit(X_train, y_train)
-    print(clf.best_params_)
-    dump(clf, path.join(config["model_directory"], label + ".joblib"))
+    dump(clf, path.join(config["model_directory"], properties["filename"]))
