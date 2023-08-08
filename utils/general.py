@@ -27,11 +27,17 @@ def json_to_df(json_content):
 
 
 def create_folder(directory):
+    """Function to create a folder in a location if it does not exist"""
     if not os.path.exists(directory):
         os.makedirs(directory)
 
 
 def timer_function(myfunc):
+    """
+    A decorator function to count model training
+    and hyper parameter optimization time
+    """
+
     def wrapper_function(*args, **kwargs):
         t1 = time()
         result = myfunc(*args, **kwargs)
@@ -44,6 +50,10 @@ def timer_function(myfunc):
 
 @timer_function
 def model_trainer(clf, params, X_train, y_train, label):
+    """
+    A function to train given model using training data
+    and do the hyperparament optimization using gridsearch
+    """
     config = load_config("config.yaml")
     clf = GridSearchCV(clf, params, cv=5, scoring="roc_auc", refit=True)
     clf.fit(X_train, y_train)
