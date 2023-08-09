@@ -59,3 +59,25 @@ def model_trainer(clf, params, X_train, y_train, properties):
     clf = GridSearchCV(clf, params, cv=5, scoring="roc_auc", refit=True)
     clf.fit(X_train, y_train)
     dump(clf, path.join(config["model_directory"], properties["filename"]))
+
+
+def performance_metrics(y_actual, y_hat):
+    TP = 0
+    FP = 0
+    TN = 0
+    FN = 0
+    for i in range(len(y_hat)):
+        if y_actual[i] == y_hat[i] == 1:
+            TP += 1
+        if y_hat[i] == 1 and y_actual[i] != y_hat[i]:
+            FP += 1
+        if y_actual[i] == y_hat[i] == 0:
+            TN += 1
+        if y_hat[i] == 0 and y_actual[i] != y_hat[i]:
+            FN += 1
+    acc = (TP + TN) / (TP + FP + TN + FN)
+    sensitivity = TP / (TP + FN)
+    specificity = TN / (TN + FP)
+    fpr = FP / (FP + TN)
+
+    return acc, sensitivity, specificity, fpr
