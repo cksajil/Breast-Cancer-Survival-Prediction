@@ -23,7 +23,7 @@ def main():
         subprocess.call(["python", "data_modeler.py"])
 
     elif stage.s == "t":
-        subprocess.call(["python", "predict.py"])
+        subprocess.call(["python", "performance_eval.py"])
 
 
 if __name__ == "__main__":
