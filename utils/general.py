@@ -4,6 +4,7 @@ import pandas as pd
 from os import path
 from time import time
 from joblib import dump
+from sklearn import metrics
 from sklearn.model_selection import GridSearchCV
 
 
@@ -79,5 +80,6 @@ def performance_metrics(y_actual, y_hat):
     sensitivity = TP / (TP + FN)
     specificity = TN / (TN + FP)
     fpr = FP / (FP + TN)
-
-    return acc, sensitivity, specificity, fpr
+    (fp_rate, tp_rate, thresholds) = metrics.roc_curve(y_actual, y_hat)
+    roc_auc = metrics.auc(fp_rate, tp_rate)
+    return acc, roc_auc, sensitivity, specificity, fpr
