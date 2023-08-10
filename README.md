@@ -10,11 +10,6 @@ Machine learning helps us to learn complex patterns from intricate data that are
 ### Dataset
 The dataset going to be used in the case study is published in Nature Communications ([Pereira et al., 2016](https://www.nature.com/articles/ncomms11479)), also available in Kaggle named as Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) database. This is part of a Canada-UK Project which contains targeted sequencing data of 1,980 primary breast cancer samples. The associated clinical and genomic data was downloaded from [cBioPortal](https://www.cbioportal.org/). The dataset was originally collected by Professor Carlos Caldas from Cambridge Research Institute and Professor Sam Aparicio from the British Columbia Cancer Center in Canada.
 
-### Jupyter Notebooks
-The analysis is available in the following jupyter notebooks:
-  1. EDA_Modeling.ipynb: contains the exploratory data analysis and visualization of the data
-  2. Case_Study_I_Final.ipynb: conatins functions that predicts on new data using saved models
-
 ### Flask Deployment
 The deployment.zip file contains python code corresponding to a deployed version of the project as flask based webapp.
 
