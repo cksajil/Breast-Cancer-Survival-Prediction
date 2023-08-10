@@ -2,7 +2,6 @@
 Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
 ### Overview
-
 Breast cancer is the second most common cancer after skin cancer in women. It affects nearly 2.1 million women every year globally. Modern genetic measurement technologies such as Next Generation Sequencing and Microarray show light on active and inactive genes responsible for certain biological functions. Comparing these gene expression changes for healthy and cancerous cells sheds light on the causal factors associated with cancer growth. This gives better insights into cancer prognosis and treatment plans such as therapy. 
 
 Machine learning helps us to learn complex patterns from intricate data that are difficult for human beings to recognize manually. One such use case is estimating the survival time and hence preventing unnecessary surgical treatments. Here in this project, the survival status is predicted using gene expression data and clinical data using classical machine learning algorithms.
@@ -19,7 +18,6 @@ Python 3.9.12
 ```
 
 ### Setting up virtual environment
-
 ```console
 # Installing Virtual Environment
 python -m pip install --user virtualenv
@@ -38,7 +36,6 @@ python -m pip install -r requirements.txt
 ```
 
 ### How to run
-
 ```console
 # Download Dataset
 python run.py -s d
