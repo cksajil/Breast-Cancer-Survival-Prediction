@@ -1,7 +1,7 @@
 # Breast-Cancer-Survival-Prediction (work in progress)
 Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
-<img src="https://im3.ezgif.com/tmp/ezgif-3-3d3247c5f1.gif" width="800">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamo3MG01NWxtMmg0Y3U3cDBoMHEwODd5anZ0NnE0ZDR0M3QwazF6aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LJbZjb5yIygGG8NoXx/giphy.gif" width="800">
 
 
 ### Overview
