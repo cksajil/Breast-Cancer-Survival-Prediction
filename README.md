@@ -1,6 +1,9 @@
 # Breast-Cancer-Survival-Prediction (work in progress)
 Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
+<img src="https://im3.ezgif.com/tmp/ezgif-3-3d3247c5f1.gif" width="800">
+
+
 ### Overview
 Breast cancer is the second most common cancer after skin cancer in women. It affects nearly 2.1 million women every year globally. Modern genetic measurement technologies such as Next Generation Sequencing and Microarray show light on active and inactive genes responsible for certain biological functions. Comparing these gene expression changes for healthy and cancerous cells sheds light on the causal factors associated with cancer growth. This gives better insights into cancer prognosis and treatment plans such as therapy. 
 
