@@ -52,11 +52,6 @@ python run.py -s m
 python run.py -s t
 ```
 
-### Testing
-```console
-python -m pytest --verbose
-```
-
 ### Results
 #### Performance on test data
 
