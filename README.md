@@ -1,13 +1,6 @@
 # Breast-Cancer-Survival-Prediction (work in progress)
 ## Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
-
- <iframe width="560" height="315"
-src="https://www.youtube.com/watch?v=LvcVP_-3Ggc" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
 <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDJleDM4b25ibnVuY2RpY2Q1bXR3Y2dwNjJwcDZtaTZldmxudHU1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1jMf3D3TCbsiWnyBEa/giphy.gif" width="480">
 
 [To see demo video click here](https://www.youtube.com/watch?v=LvcVP_-3Ggc)
