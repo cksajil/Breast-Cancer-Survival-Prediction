@@ -1,4 +1,4 @@
-# Breast-Cancer-Survival-Prediction (work in progress)
+# Breast-Cancer-Survival-Prediction
 ## Breast Cancer Survival Prediction with Clinical and Gene Expression Data
 
 <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDVrZ2hnd3VvcTRpZGxuZm01dmNjcWoxNjFnNGM1eTN3aGUyOW9wbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bPDX9jullNQx4QKbWJ/giphy.gif" width="480">
